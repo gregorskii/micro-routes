@@ -1,7 +1,7 @@
 module.exports = {
   name: 'foo',
   path: '/foo',
-  fn: (req, res) => {
+  method: (req, res) => {
     return 'foo route';
   }
 };
