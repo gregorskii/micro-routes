@@ -1,5 +1,5 @@
 {
-  "name": "zeit-test",
+  "name": "zeit-routes",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "./node_modules/.bin/nodemon"
   },
-  "author": "",
+  "author": "gregorskii",
   "license": "ISC",
   "dependencies": {
     "load-directory": "^2.0.7",
