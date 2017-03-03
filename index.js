@@ -1,4 +1,5 @@
 const micro = require('micro');
+
 const router = require('./router');
 const handlerUtils = require('./util/handlers');
 const responses = require('./util/responses');
@@ -10,7 +11,7 @@ const server = micro(async (req, res) => {
   if (routeMatch) {
     routeName = routeMatch.route;
 
-    if (Object.hasOwnProperty.call(router.routeHandlers, routeName)) {
+    if (Object.hasOwnProperty.call(router.handlers, routeName)) {
       const handlerMethod = handlerUtils.getMethod(
         router, req.method.toLowerCase(), routeName
       );

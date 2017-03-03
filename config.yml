@@ -1,0 +1,12 @@
+functions:
+  foo:
+    path: /foo
+    handlers:
+      get:
+        handler: handlers/foo
+
+  bar:
+    path: /bar/:id(\d+)
+    handlers:
+      get:
+        handler: handlers/bar
