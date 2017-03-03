@@ -6,14 +6,11 @@ const responses = require('./util/responses');
 
 const server = micro(async (req, res) => {
   const routeMatch = router.pathMatcher.match(req.url);
-  let routeName;
 
   if (routeMatch) {
-    routeName = routeMatch.route;
-
-    if (Object.hasOwnProperty.call(router.handlers, routeName)) {
+    if (Object.hasOwnProperty.call(router.handlers, routeMatch.route)) {
       const handlerMethod = handlerUtils.getMethod(
-        router, req.method.toLowerCase(), routeName
+        router, req.method.toLowerCase(), routeMatch.route
       );
 
       if (handlerMethod) {

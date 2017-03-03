@@ -1,14 +1,14 @@
 functions:
   foo:
-    path: /foo
+    path: foo
     handlers:
       get:
-        handler: handlers/foo
+        function: functions/foo
 
   bar:
-    path: /bar/:id(\d+)
+    path: bar/:id(\d+)
     handlers:
       get:
-        handler: handlers/bar/get
+        function: functions/bar/get
       post:
-        handler: handlers/bar/post
+        function: functions/bar/post

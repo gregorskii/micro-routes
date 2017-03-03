@@ -24,12 +24,12 @@ Object.keys(config.functions).forEach((functionName) => {
   if (Object.hasOwnProperty.call(config.functions, functionName)) {
     let functionConfig = config.functions[functionName];
 
-    routes.push(new Route(functionName, functionConfig.path));
+    routes.push(new Route(functionName, `/${functionConfig.path}`));
 
     Object.keys(functionConfig.handlers).forEach((method) => {
       if (Object.hasOwnProperty.call(functionConfig.handlers, method)) {
         try {
-          handlers[functionName][method] = require(`./${functionConfig.handlers[method].handler}`);
+          handlers[functionName][method] = require(`./${functionConfig.handlers[method].function}`);
         } catch (err) {
           console.error('Invalid handler config', err);
           process.exit();
