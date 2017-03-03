@@ -17,5 +17,5 @@
     "package.json",
     "*.yml"
   ],
-  "ext": "js json"
+  "ext": "js json yml"
 }
