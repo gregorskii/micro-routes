@@ -19,17 +19,17 @@ try {
   process.exit();
 }
 
-Object.keys(config.functions).forEach((functionName) => {
-  handlers[functionName] = {};
-  if (Object.hasOwnProperty.call(config.functions, functionName)) {
-    let functionConfig = config.functions[functionName];
+Object.keys(config.functions).forEach((name) => {
+  handlers[name] = {};
 
-    routes.push(new Route(functionName, `/${functionConfig.path}`));
+  if (Object.hasOwnProperty.call(config.functions, name)) {
+    let fnConfig = config.functions[name];
+    routes.push(new Route(name, `/${fnConfig.path}`));
 
-    Object.keys(functionConfig.handlers).forEach((method) => {
-      if (Object.hasOwnProperty.call(functionConfig.handlers, method)) {
+    Object.keys(fnConfig.handlers).forEach((method) => {
+      if (Object.hasOwnProperty.call(fnConfig.handlers, method)) {
         try {
-          handlers[functionName][method] = require(`./${functionConfig.handlers[method].function}`);
+          handlers[name][method] = require(`./${fnConfig.handlers[method].function}`);
         } catch (err) {
           console.error('Invalid handler config', err);
           process.exit();
