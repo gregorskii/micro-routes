@@ -9,4 +9,6 @@ functions:
     path: /bar/:id(\d+)
     handlers:
       get:
-        handler: handlers/bar
+        handler: handlers/bar/get
+      post:
+        handler: handlers/bar/post

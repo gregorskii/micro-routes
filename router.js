@@ -1,5 +1,4 @@
 const routeMatch = require('route-match');
-const requireDir = require('load-directory');
 const yaml = require('js-yaml');
 const path = require('path');
 const fs = require('fs');
@@ -21,6 +20,7 @@ try {
 }
 
 Object.keys(config.functions).forEach((functionName) => {
+  handlers[functionName] = {};
   if (Object.hasOwnProperty.call(config.functions, functionName)) {
     let functionConfig = config.functions[functionName];
 
@@ -28,7 +28,6 @@ Object.keys(config.functions).forEach((functionName) => {
 
     Object.keys(functionConfig.handlers).forEach((method) => {
       if (Object.hasOwnProperty.call(functionConfig.handlers, method)) {
-        handlers[functionName] = {};
         try {
           handlers[functionName][method] = require(`./${functionConfig.handlers[method].handler}`);
         } catch (err) {
