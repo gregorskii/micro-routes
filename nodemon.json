@@ -6,7 +6,7 @@
     "node_modules/**"
   ],
   "execMap": {
-    "js": "node ./{{filename}}"
+    "js": "node ./container/{{filename}}"
   },
   "events": {
     "restart": "osascript -e 'display notification \"App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'"

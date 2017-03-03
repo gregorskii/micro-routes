@@ -39,6 +39,20 @@ Where the examples show two routes, `/foo` with only one `GET` handler function,
 
 The handler functions are stored in a folder `functions` (which can be named anything based on the YML config for function paths) and contains single files for each function handler.
 
+# Docker
+
+To build with Docker run:
+
+```
+docker build -t zeit-router/app .
+```
+
+To run in the background run:
+
+```
+docker run -it -p 3000:3000 -d zeit-router/app
+```
+
 # TODO:
 
 Remaining tasks:
@@ -48,4 +62,3 @@ Remaining tasks:
 - add tests
 - ensure the handlers in `functions` support async
 - possibly extract to a NPM package so one can require this code but still provide `functions` and `config.yml` files in their own projects
-- add dockerfile to build a container to wrap the Micro service

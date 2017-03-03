@@ -1,8 +1,9 @@
 const micro = require('micro');
+const path = require('path');
 
-const router = require('./router');
-const handlerUtils = require('./util/handlers');
-const responses = require('./util/responses');
+const router = require(path.join(__dirname, 'router'));
+const handlerUtils = require(path.join(__dirname, 'util', 'handlers'));
+const responses = require(path.join(__dirname, 'util', 'responses'));
 
 const server = micro(async (req, res) => {
   const routeMatch = router.pathMatcher.match(req.url);

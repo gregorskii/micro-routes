@@ -13,7 +13,7 @@ let handlers = {};
 let routes = [];
 
 try {
-  config = yaml.safeLoad(fs.readFileSync('./config.yml', 'utf8'));
+  config = yaml.safeLoad(fs.readFileSync(path.join(__dirname, 'config.yml'), 'utf8'));
 } catch (err) {
   console.error(err);
   process.exit();
