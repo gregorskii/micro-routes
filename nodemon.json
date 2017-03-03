@@ -14,7 +14,8 @@
   "watch": [
     "*.js",
     ".env",
-    "package.json"
+    "package.json",
+    "*.yml"
   ],
   "ext": "js json"
 }
