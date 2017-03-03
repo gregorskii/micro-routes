@@ -1,6 +1,6 @@
-# zeit-routes
+# micro-routes
 
-Zeit application bootstrap with url based route handlers.
+Zeit Micro application bootstrap with url based route handlers.
 
 The routes can support different paths, but ideally each Micro app would only support different methods and paths within a single micro service.
 
